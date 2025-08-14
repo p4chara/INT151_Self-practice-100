@@ -1,0 +1,16 @@
+function shallowEquality(object1, object2) {
+  const keys1 = Object.keys(object1);   //
+  const keys2 = Object.keys(object2);   //ตรงนี้คือการดึงkeyออกมาจากobject
+
+  if (keys1.length !== keys2.length) {
+    return false;                       //ถ้าค่ามีจำนวนไม่เท่ากันจะreturn false
+  }
+
+  for (let key of keys1) {              //วนลูปเผื่อเช็คทุกkey ถ้าvalue ของแต่ละkeyไม่เท่ากัน 
+    if (object1[key] !== object2[key]) { //มันจะreturn false 
+      return false;
+    }
+  }
+
+  return true;  //แต่ถ้าเหมือนกันทุกตัวจะreturn true
+}
